@@ -131,9 +131,3 @@
 ;; EX 40
 (check-expect (string-remove-last "Sarthak") "Sartha")
 (check-expect (string-remove-last "hey") "he")
-
-
-
-
-
-
