@@ -1,9 +1,6 @@
 ;; The first three lines of this file were inserted by DrRacket. They record metadata
 ;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-beginner-reader.ss" "lang")((modname |ex 47|) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
-(require 2htdp/image)
-(require 2htdp/universe)
-
+#reader(lib "htdp-beginner-reader.ss" "lang")((modname |ex 47|) (read-case-sensitive #t) (teachpacks ((lib "image.rkt" "teachpack" "2htdp") (lib "universe.rkt" "teachpack" "2htdp") (lib "lab8-teachpack.rkt" "installed-teachpacks"))) (htdp-settings #(#t constructor repeating-decimal #f #t none #f ((lib "image.rkt" "teachpack" "2htdp") (lib "universe.rkt" "teachpack" "2htdp") (lib "lab8-teachpack.rkt" "installed-teachpacks")) #f)))
 ;; EX 47
 
 ;; CONSTANTS
@@ -24,8 +21,6 @@
      ...)
 (check-expect (sub01 5) 4.9)
 (check-expect (sub01 1) 0.9)
-
-#|HOW IS THIS DEALING WITH IT GOING NEGATIVE??|#
 (define (sub01 x)
   (- x 0.1))
 
@@ -35,15 +30,6 @@
 (define (render x)
   (place-image BAR x 100 BACKGROUND))
 
-
-#| ATHARVA'S COMMENTS
-
-THE SIGNATURE FOR ADDX BELOW HAS THE WRONG ORDER
-ADD 
-|#
-
-
-
 ;; WorldState Key-Input -> WorldState
 ;; Increase the "BAR" according to the key pressed
 #; (define (addx k l)
@@ -52,7 +38,6 @@ ADD
 (check-expect (addx "down" 250) (+ 250 (/ 1 5)))
 (define (addx key x)
      (cond
-       #|LHS OF THIS COND IS WRONG USE YOUR KEY ARGUMENT|#
        [(key=? "up" "up") (+ x (/ 1 3))]
        [(key=? "down" "down") (+ x (/ 1 5))]))
 
